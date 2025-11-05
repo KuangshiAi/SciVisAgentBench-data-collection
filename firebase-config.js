@@ -13,12 +13,14 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
+let db, storage; // Declare globally so other scripts can access
+
 try {
   firebase.initializeApp(firebaseConfig);
 
   // Get Firebase services
-  const db = firebase.firestore();
-  const storage = firebase.storage();
+  db = firebase.firestore();
+  storage = firebase.storage();
 
   console.log('✅ Firebase initialized successfully!');
   console.log('📦 Project ID:', firebaseConfig.projectId);
