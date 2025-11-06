@@ -37,7 +37,7 @@ const appState = {
 document.addEventListener('DOMContentLoaded', function() {
     initializeNavigation();
     initializeForm();
-    loadSubmissions();
+    window.loadSubmissions();
     updateDashboard();
 });
 
@@ -142,7 +142,7 @@ async function handleFormSubmission(form) {
 
     try {
         // Save to Firebase (or localStorage if Firebase not available)
-        await saveSubmission(submission, files);
+        await window.saveSubmission(submission, files);
 
         // Show success message
         showSuccess('Thank you for your contribution! Your dataset submission has been received.');
@@ -151,7 +151,7 @@ async function handleFormSubmission(form) {
         form.reset();
 
         // Update dashboard
-        await loadSubmissions();
+        await window.loadSubmissions();
         updateDashboard();
 
         // Navigate to dashboard
@@ -227,10 +227,6 @@ window.loadSubmissions = function() {
     appState.submissions = submissions;
     console.log('Loaded from localStorage (demo mode)');
 };
-
-// Create aliases for internal use
-const saveSubmission = window.saveSubmission;
-const loadSubmissions = window.loadSubmissions;
 
 // Dashboard Updates
 function updateDashboard() {
