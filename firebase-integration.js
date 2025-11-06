@@ -124,8 +124,12 @@ if (window.firebaseReady) {
             for (const [key, value] of Object.entries(submission)) {
                 if (!(value instanceof File) && !(value instanceof FileList)) {
                     cleanSubmission[key] = value;
+                } else {
+                    console.log('⚠️ Filtered out File object in field:', key, value);
                 }
             }
+
+            console.log('🔍 Clean submission:', cleanSubmission);
 
             const submissionData = {
                 ...cleanSubmission,
@@ -150,6 +154,9 @@ if (window.firebaseReady) {
                     } : null
                 }
             };
+
+            // Debug: Log what we're trying to save
+            console.log('🔍 Attempting to save:', JSON.stringify(submissionData, null, 2));
 
             await window.firebaseDB.collection('submissions').doc(submissionId).set(submissionData);
 
