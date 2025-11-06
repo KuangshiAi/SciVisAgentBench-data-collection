@@ -118,8 +118,17 @@ if (window.firebaseReady) {
 
             // Save to Firestore
             showUploadProgress('Saving to database...', 90);
+
+            // Clean submission object - remove any File objects that might have slipped through
+            const cleanSubmission = {};
+            for (const [key, value] of Object.entries(submission)) {
+                if (!(value instanceof File) && !(value instanceof FileList)) {
+                    cleanSubmission[key] = value;
+                }
+            }
+
             const submissionData = {
-                ...submission,
+                ...cleanSubmission,
                 id: submissionId,
                 timestamp: firebase.firestore.FieldValue.serverTimestamp(),
                 files: {
