@@ -106,15 +106,74 @@ if (window.firebaseReady) {
                 );
             }
 
-            // Upload metadata file (optional)
-            let metadataUrl = null;
+            // Upload user's additional metadata file (optional)
+            let additionalMetadataUrl = null;
             if (files.metadataFile) {
-                showUploadProgress('Uploading metadata...', 80);
-                metadataUrl = await uploadFileToStorage(
+                showUploadProgress('Uploading additional metadata...', 75);
+                additionalMetadataUrl = await uploadFileToStorage(
                     files.metadataFile,
-                    `submissions/${submissionId}/metadata/${files.metadataFile.name}`
+                    `submissions/${submissionId}/additional/${files.metadataFile.name}`
                 );
             }
+
+            // Generate and upload metadata.json
+            showUploadProgress('Generating metadata...', 80);
+            const metadataJson = {
+                submissionId: submissionId,
+                timestamp: new Date().toISOString(),
+                contributor: {
+                    name: submission.contributorName,
+                    email: submission.contributorEmail,
+                    institution: submission.contributorInstitution
+                },
+                dataset: {
+                    name: submission.datasetName,
+                    description: submission.datasetDescription,
+                    applicationDomain: submission.applicationDomain
+                },
+                taxonomy: {
+                    dataType: submission.dataType,
+                    temporalDimension: submission.temporalDimension,
+                    attributeType: submission.attributeType,
+                    taskTaxonomy: submission.taskTaxonomy,
+                    dataTypeOther: submission.dataTypeOther || null
+                },
+                task: {
+                    description: submission.taskDescription,
+                    complexity: submission.taskComplexity,
+                    evaluationCriteria: submission.evalCriteria
+                },
+                files: {
+                    sourceData: files.sourceData ? {
+                        name: files.sourceData.name,
+                        size: files.sourceData.size,
+                        type: files.sourceData.type
+                    } : null,
+                    groundTruthImages: files.groundTruthImages.map(f => ({
+                        name: f.name,
+                        size: f.size,
+                        type: f.type
+                    })),
+                    vizEngineState: files.vizEngineState ? {
+                        name: files.vizEngineState.name,
+                        size: files.vizEngineState.size,
+                        type: files.vizEngineState.type
+                    } : null,
+                    additionalMetadata: files.metadataFile ? {
+                        name: files.metadataFile.name,
+                        size: files.metadataFile.size,
+                        type: files.metadataFile.type
+                    } : null
+                }
+            };
+
+            // Upload metadata.json as a file
+            const metadataBlob = new Blob([JSON.stringify(metadataJson, null, 2)], { type: 'application/json' });
+            const metadataFile = new File([metadataBlob], 'metadata.json', { type: 'application/json' });
+            const metadataJsonUrl = await uploadFileToStorage(
+                metadataFile,
+                `submissions/${submissionId}/metadata.json`
+            );
 
             // Save to Firestore
             showUploadProgress('Saving to database...', 90);
@@ -125,6 +184,11 @@ if (window.firebaseReady) {
                 id: submissionId,
                 timestamp: firebase.firestore.FieldValue.serverTimestamp(),
                 files: {
+                    metadataJson: {
+                        name: 'metadata.json',
+                        url: metadataJsonUrl,
+                        size: metadataBlob.size
+                    },
                     sourceData: sourceDataUrl ? {
                         name: files.sourceData.name,
                         url: sourceDataUrl,
@@ -136,9 +200,9 @@ if (window.firebaseReady) {
                         url: vizStateUrl,
                         size: files.vizEngineState.size
                     } : null,
-                    metadataFile: metadataUrl ? {
+                    additionalMetadata: additionalMetadataUrl ? {
                         name: files.metadataFile.name,
-                        url: metadataUrl,
+                        url: additionalMetadataUrl,
                         size: files.metadataFile.size
                     } : null
                 }
