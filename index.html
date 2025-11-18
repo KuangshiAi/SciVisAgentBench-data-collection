@@ -19,6 +19,7 @@
                 <li><a href="#" data-page="submit">Submit Dataset</a></li>
                 <li><a href="#" data-page="about">About</a></li>
                 <li><a href="https://github.com/KuangshiAi/SciVisAgentBench" target="_blank">GitHub</a></li>
+                <li><a href="https://huggingface.co/datasets/KuangshiAi/SciVisAgentBench-tasks" target="_blank">Hugging Face</a></li>
             </ul>
         </div>
     </nav>
@@ -125,7 +126,7 @@
                         <h4>📁 About File Uploads</h4>
                         <p>Files are uploaded to Firebase Cloud Storage. All submissions are stored securely and will be used for the SciVisAgentBench benchmark.</p>
                         <ul>
-                            <li><strong>Maximum data size:</strong> &lt; 1GB per dataset</li>
+                            <li><strong>Maximum data size:</strong> &lt; 5GB per dataset</li>
                             <li><strong>Ground truth images:</strong> PNG, JPG, TIFF, etc. (minimum 1024x1024 pixels recommended)</li>
                             <li><strong>Supported source data formats:</strong> VTK, NIfTI, RAW, NRRD, HDF5, etc.</li>
                         </ul>
@@ -441,7 +442,7 @@
                                 <div class="form-group full-width">
                                     <label for="source-data">Source Data File *</label>
                                     <input type="file" id="source-data" required>
-                                    <small>Any format accepted: VTK, NIfTI, RAW, NRRD, HDF5, etc. (Max size: 500MB recommended)</small>
+                                    <small>Any format accepted: VTK, NIfTI, RAW, NRRD, HDF5, etc. (Max size: 5GB recommended)</small>
                                 </div>
                                 <div class="form-group full-width">
                                     <label for="ground-truth-images">Ground Truth Images (multi-view) *</label>
@@ -529,46 +530,27 @@
                                 metrics for robust assessment.
                             </p>
 
-                            <h3>File Upload & Storage</h3>
-                            <p><strong>Current Demo Mode:</strong> This demonstration website uses browser LocalStorage to simulate submissions. Files are not actually uploaded or stored.</p>
-
-                            <p><strong>For Production Deployment:</strong></p>
-                            <ul>
-                                <li><strong>Backend Required:</strong> You'll need to set up a backend server (Node.js, Python Flask/Django, etc.) to handle file uploads</li>
-                                <li><strong>File Storage Options:</strong>
-                                    <ul>
-                                        <li>Cloud storage: AWS S3, Google Cloud Storage, Azure Blob Storage</li>
-                                        <li>GitHub Large File Storage (LFS) for version-controlled datasets</li>
-                                        <li>Institutional data repositories</li>
-                                        <li>Self-hosted file server</li>
-                                    </ul>
-                                </li>
-                                <li><strong>File Size Limits:</strong>
-                                    <ul>
-                                        <li>Recommended: &lt; 500MB per dataset</li>
-                                        <li>Ground truth images: ~5-10MB each (PNG format)</li>
-                                        <li>Total per submission: &lt; 1GB recommended</li>
-                                        <li>Limits depend on your hosting solution and budget</li>
-                                    </ul>
-                                </li>
-                                <li><strong>Access:</strong> Files would be stored in a structured directory (e.g., <code>submissions/{submission-id}/</code>) and accessible via API or direct download</li>
-                            </ul>
-
-                            <p>See our <a href="https://github.com/KuangshiAi/SciVisAgentBench" target="_blank">GitHub repository</a> for backend integration examples and deployment guides.</p>
+                            <p>See our <a href="https://github.com/KuangshiAi/SciVisAgentBench" target="_blank">GitHub repository</a> for evaluation examples and deployment guides.</p>
 
                             <h3>Team</h3>
                             <p>
-                                This project is a collaboration between University of Notre Dame,
+                                The core team of this project is from the University of Notre Dame,
                                 Lawrence Livermore National Laboratory, and Vanderbilt University.
+                                Main contributors include <strong>Kuangshi Ai</strong> (kai@nd.edu),
+                                <strong>Shusen Liu</strong> (liu42@llnl.gov), and
+                                <strong>Haichao Miao</strong> (miao1@llnl.gov).
                             </p>
 
                             <div class="paper-links">
-                                <a href="https://github.com/KuangshiAi/SciVisAgentBench" class="btn btn-primary" target="_blank">
-                                    View on GitHub
-                                </a>
-                                <a href="https://arxiv.org/abs/2509.15160" class="btn btn-secondary" target="_blank">
-                                    Read Position Paper
-                                </a>
+                            <a href="https://github.com/KuangshiAi/SciVisAgentBench" class="btn btn-primary" target="_blank">
+                                View on GitHub
+                            </a>
+                            <a href="https://huggingface.co/datasets/KuangshiAi/SciVisAgentBench-tasks" class="btn btn-primary" target="_blank">
+                                View on Hugging Face
+                            </a>
+                            <a href="https://arxiv.org/abs/2509.15160" class="btn btn-secondary" target="_blank">
+                                Read Position Paper
+                            </a>
                             </div>
                         </div>
                     </div>
@@ -588,13 +570,13 @@
                     <h4>Links</h4>
                     <ul>
                         <li><a href="https://github.com/KuangshiAi/SciVisAgentBench">GitHub Repository</a></li>
-                        <li><a href="https://github.com/KuangshiAi/SciVisAgentBench-tasks">Task Repository</a></li>
+                        <li><a href="https://huggingface.co/datasets/KuangshiAi/SciVisAgentBench-tasks">Task Repository</a></li>
                         <li><a href="https://arxiv.org/abs/2509.15160" target="_blank">Position Paper</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Contact</h4>
-                    <p>For questions or collaboration inquiries, please contact us via GitHub.</p>
+                    <p>For questions or collaboration inquiries, please contact us via GitHub, or contact Kuangshi Ai <strong>via kai[at]nd[dot]edu.</strong></p>
                 </div>
             </div>
             <div class="footer-bottom">
