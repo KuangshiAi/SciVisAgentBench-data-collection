@@ -204,6 +204,81 @@ section {
     background: var(--bg-secondary);
 }
 
+/* Benchmark Overview */
+.benchmark-overview {
+    background: var(--bg-primary);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+}
+
+.overview-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.overview-intro {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.overview-section {
+    margin-bottom: 1.5rem;
+}
+
+.overview-section h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.category-list,
+.institution-list {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+.category-list li,
+.institution-list li {
+    padding: 0.5rem 0;
+    color: var(--text-secondary);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    border-bottom: 1px solid var(--bg-tertiary);
+}
+
+.category-list li:last-child,
+.institution-list li:last-child {
+    border-bottom: none;
+}
+
+.category-list li strong,
+.institution-list li strong {
+    color: var(--text-primary);
+}
+
+.contributors-note {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--bg-tertiary);
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.contributors-note strong {
+    color: var(--text-primary);
+}
+
 .category-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
