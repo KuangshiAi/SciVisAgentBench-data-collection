@@ -27,14 +27,134 @@
     <main>
         <!-- Dashboard Page -->
         <div id="page-dashboard" class="page active">
+            <!-- Benchmark Coverage Section -->
+            <section class="benchmark-section">
+                <div class="container">
+                    <!-- Benchmark Coverage Overview -->
+                    <div class="benchmark-overview">
+                        <div class="overview-header">
+                            <h3 class="overview-title">Current Benchmark Coverage</h3>
+                            <div class="overview-stats-highlight">
+                                <div class="highlight-item">
+                                    <span class="highlight-number">67</span>
+                                    <span class="highlight-label">Test Cases</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <span class="highlight-number">6</span>
+                                    <span class="highlight-label">Data Domains</span>
+                                </div>
+                                <div class="highlight-item">
+                                    <span class="highlight-number">3</span>
+                                    <span class="highlight-label">Institutions</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="overview-content">
+                            <div class="overview-section">
+                                <h4 class="section-header">
+                                    <svg class="section-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" fill="currentColor"/>
+                                    </svg>
+                                    Data Categories
+                                </h4>
+                                <div class="category-grid-overview">
+                                    <div class="category-item">
+                                        <div class="category-icon">🔬</div>
+                                        <div class="category-content">
+                                            <div class="category-name">Simulation Data</div>
+                                            <div class="category-count">20 cases</div>
+                                            <div class="category-desc">CFD, physics simulations, FEM</div>
+                                        </div>
+                                    </div>
+                                    <div class="category-item">
+                                        <div class="category-icon">📦</div>
+                                        <div class="category-content">
+                                            <div class="category-name">Object Scans & Industrial CT</div>
+                                            <div class="category-count">19 cases</div>
+                                            <div class="category-desc">3D scanning, industrial imaging</div>
+                                        </div>
+                                    </div>
+                                    <div class="category-item">
+                                        <div class="category-icon">🏥</div>
+                                        <div class="category-content">
+                                            <div class="category-name">Medical Imaging</div>
+                                            <div class="category-count">11 cases</div>
+                                            <div class="category-desc">CT, MRI, medical visualization</div>
+                                        </div>
+                                    </div>
+                                    <div class="category-item">
+                                        <div class="category-icon">📊</div>
+                                        <div class="category-content">
+                                            <div class="category-name">Geometry & Synthetic</div>
+                                            <div class="category-count">10 cases</div>
+                                            <div class="category-desc">Charts, I/O tests, shapes</div>
+                                        </div>
+                                    </div>
+                                    <div class="category-item">
+                                        <div class="category-icon">🧬</div>
+                                        <div class="category-content">
+                                            <div class="category-name">Molecular & Biological</div>
+                                            <div class="category-count">5 cases</div>
+                                            <div class="category-desc">Molecular dynamics, microscopy</div>
+                                        </div>
+                                    </div>
+                                    <div class="category-item">
+                                        <div class="category-icon">🌍</div>
+                                        <div class="category-content">
+                                            <div class="category-name">Climate & Geospatial</div>
+                                            <div class="category-count">4 cases</div>
+                                            <div class="category-desc">Climate science, geospatial data</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="overview-section">
+                                <h4 class="section-header">
+                                    <svg class="section-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                        <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" fill="currentColor"/>
+                                    </svg>
+                                    Contributing Institutions
+                                </h4>
+                                <div class="institution-grid">
+                                    <div class="institution-card">
+                                        <div class="institution-name">Argonne National Laboratory</div>
+                                        <div class="institution-abbr">ANL</div>
+                                        <div class="institution-count">20 cases</div>
+                                    </div>
+                                    <div class="institution-card">
+                                        <div class="institution-name">Lawrence Livermore National Laboratory</div>
+                                        <div class="institution-abbr">LLNL</div>
+                                        <div class="institution-count">36 cases</div>
+                                    </div>
+                                    <div class="institution-card">
+                                        <div class="institution-name">University of Notre Dame</div>
+                                        <div class="institution-abbr">Notre Dame</div>
+                                        <div class="institution-count">11 cases</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="contributors-footer">
+                                <svg class="footer-icon" width="16" height="16" viewBox="0 0 20 20" fill="none">
+                                    <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" fill="currentColor"/>
+                                </svg>
+                                <span><strong>Contributors:</strong> Tom Peterka (ANL), Haichao Miao (LLNL), Shusen Liu (LLNL), Kuangshi Ai (Notre Dame), Kaiyuan Tang (Notre Dame)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Hero Section -->
             <section class="hero">
                 <div class="container">
                     <div class="hero-content">
-                        <h2>Building the Future of Scientific Visualization Agents</h2>
+                        <h2>Pending Contributions</h2>
                         <p class="hero-description">
-                            Join us in creating a comprehensive benchmark that transforms SciVis agents from
-                            experimental tools into reliable scientific instruments through systematic evaluation.
+                            Track new submissions awaiting review and incorporation into the benchmark.
+                            These statistics reflect contributions not yet included in the official benchmark above.
                         </p>
                         <div class="hero-stats">
                             <div class="stat">
@@ -61,42 +181,7 @@
             <!-- Dashboard Section -->
             <section class="dashboard-section">
                 <div class="container">
-                    <h2 class="section-title">Dashboard</h2>
-
-                    <!-- Benchmark Coverage Overview -->
-                    <div class="benchmark-overview">
-                        <h3 class="overview-title">Current Benchmark Coverage</h3>
-                        <p class="overview-intro">
-                            Our benchmark currently includes <strong>67 test cases</strong> spanning diverse scientific
-                            visualization domains, contributed by leading research institutions:
-                        </p>
-
-                        <div class="overview-section">
-                            <h4>Data Categories:</h4>
-                            <ul class="category-list">
-                                <li><strong>Simulation Data (20 cases)</strong> – CFD, physics simulations, finite element analysis</li>
-                                <li><strong>Object Scans & Industrial CT (19 cases)</strong> – 3D scanned objects, industrial imaging</li>
-                                <li><strong>Medical Imaging (11 cases)</strong> – CT scans, MRI data, medical visualizations</li>
-                                <li><strong>Geometry & Synthetic (10 cases)</strong> – Charts, I/O tests, geometry processing</li>
-                                <li><strong>Molecular & Biological (5 cases)</strong> – Molecular dynamics, biological microscopy</li>
-                                <li><strong>Climate & Geospatial (4 cases)</strong> – Climate science, geospatial data analysis</li>
-                            </ul>
-                        </div>
-
-                        <div class="overview-section">
-                            <h4>Contributing Institutions:</h4>
-                            <ul class="institution-list">
-                                <li><strong>Argonne National Laboratory (ANL)</strong> – 20 cases</li>
-                                <li><strong>Lawrence Livermore National Laboratory (LLNL)</strong> – 36 cases</li>
-                                <li><strong>University of Notre Dame</strong> – 11 cases</li>
-                            </ul>
-                        </div>
-
-                        <p class="contributors-note">
-                            <strong>Contributors:</strong> Tom Peterka (ANL), Haichao Miao (LLNL), Shusen Liu (LLNL),
-                            Kuangshi Ai (Notre Dame), Kaiyuan Tang (Notre Dame)
-                        </p>
-                    </div>
+                    <h2 class="section-title">Pending Contributions Breakdown</h2>
 
                     <!-- Category Breakdown -->
                     <div class="category-grid">
